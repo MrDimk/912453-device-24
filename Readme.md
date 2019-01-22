@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Dmitriy Kozlov](https://up.htmlacademy.ru/htmlcss/24/user/912453).
-* Наставник: `Дмитрий Иовлев` (https://htmlacademy.ru/profile/skywalker).
+* Наставник: [Дмитрий Иовлев](https://htmlacademy.ru/profile/skywalker).
 
 ---
 
