@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Магазин гаджетов - DEVICE</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="site-navigation">
+        <a href="index.html" class="header-logo">
+          <img src="img/index-logo.svg" width="162" height="35" alt="Логотип магазина «Девайс»" />
+        </a>
+        <p class="header-search"><input type="text" placeholder="Поиск по сайту" /></p>
+        <ul class="user-navigation">
+          <li class="login-profile">Валентин Петухов</li>
+          <li class="login-logout">Выйти</li>
+        </ul>
+        <ul class="purchase-menu">
+          <li class="compare"><a href="compare.html">Сравнить</a></li>
+          <li class="cart"><a href="cart.html">Корзина</a></li>
+        </ul>
+        <ul class="header-menu">
+          <li>
+            <a class="main-menu-catalog">Каталог товаров</a>
+            <!-- Выпадающее меню -->
+            <ul class="catalog-submenu">
+              <li><a href="catalog.html" class="submenu-item">Виртуальная реальность</a></li>
+              <li><a href="catalog.html" class="submenu-item">Моноподы для селфи</a></li>
+              <li><a href="catalog.html" class="submenu-item">Экшн-камеры</a></li>
+              <li><a href="catalog.html" class="submenu-item">Фитнеc-браслеты</a></li>
+              <li><a href="catalog.html" class="submenu-item">Умные часы</a></li>
+              <li><a href="catalog.html" class="submenu-item">Квадрокоптеры</a></li>
+            </ul>
+          </li>
+          <li><a href="delivery.html ">Доставка</a></li>
+          <li><a href="guarantee.html">Гарантия</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="catalog-page">
+      <h1 class="catalog-page-title">Моноподы для селфи</h1>
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог товаров</a></li>
+        <li class="breadcrumbs-current">Моноподы для селфи</li>
+      </ul>
+      <section class="catalog-filters">
+        <h2 class="filters-title">Фильтр:</h2>
+        <!-- Форма с фильтрами -->
+      </section>
+      <section class="catalog-sort">
+        <h2 class="sort-title">Сортировка:</h2>
+        <!-- Может быть сортировку корректнее делать с помощью input/radio? -->
+        <ul class="sort-types">
+          <li class="sort-current">По цене</li>
+          <li>По типу</li>
+          <li>По популярности</li>
+        </ul>
+        <p class="sort-order">
+          <a href="" class="forward order-current">По возрастанию</a>
+          <a href="" class="backward">По убыванию</a>
+        </p>
+      </section>
+      <section class="catalog-items">
+        <h2 class="visually-hidden">Товары в категории</h2>
+        <ul class="catalog-list">
+          <!-- Item 1 -->
+          <li>
+            <h3 class="catalog-item-title">
+              <a href="catalog-item.html">Любительская селфи-палка</a>
+            </h3>
+            <p>
+              <img src="img/product-1.png" alt="Фото товара" /> <a class="button">В корзину</a>
+              <a class="to-compare">Добавить к сравнению</a>
+            </p>
+            <b class="price">500 руб.</b>
+          </li>
+          <!-- Item 2 -->
+          <li>
+            <h3 class="catalog-item-title">
+              <a href="catalog-item.html">Профессиональная селфи-палка </a>
+            </h3>
+            <p>
+              <img src="img/product-2.png" alt="Фото товара" /> <a class="button">В корзину</a>
+              <a class="to-compare">Добавить к сравнению</a>
+            </p>
+            <b class="price">1 500 руб.</b>
+          </li>
+          <!-- Item 3 -->
+          <li>
+            <h3 class="catalog-item-title">
+              <a href="catalog-item.html">Непотопляемая селфи-палка</a>
+            </h3>
+            <p>
+              <img src="img/product-3.png" alt="Фото товара" /> <a class="button">В корзину</a>
+              <a class="to-compare">Добавить к сравнению</a>
+            </p>
+            <b class="price">2 500 руб.</b>
+          </li>
+          <!-- Item 4 -->
+          <li>
+            <h3 class="catalog-item-title">
+              <a href="catalog-item.html">Селфи-палка «Следуй за мной»</a>
+            </h3>
+            <p>
+              <img src="img/product-4.png" alt="Фото товара" /> <a class="button">В корзину</a>
+              <a class="to-compare">Добавить к сравнению</a>
+            </p>
+            <b class="price">4 900 руб.</b>
+          </li>
+        </ul>
+      </section>
+      <section class="pagination">
+        <h2 class="visually-hidden">Страницы каталога</h2>
+        <span class="pagination-previous"><a href="catalog.html">Назад</a></span>
+        <ul class="pagination-list">
+          <li class="pagination-item-current">1</li>
+          <li><a href="catalog.html">2</a></li>
+          <li><a href="catalog.html">3</a></li>
+        </ul>
+        <span class="pagination-previous"><a href="catalog.html">Вперед</a></span>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <p class="footer-logo">
+        <a class="footer-logo"><img src="img/logo-yellow.svg" alt="Логотип магазина «Девайс»"/></a>
+      </p>
+      <ul class="footer-user-navigation">
+        <li class="login-profile">Валентин Петухов</li>
+        <li class="login-logout">Выйти</li>
+      </ul>
+      <ul class="footer-purchase-menu">
+        <li class="compare"><a href="compare.html">Сравнить</a></li>
+        <li class="cart"><a href="cart.html">Корзина</a></li>
+      </ul>
+      <ul class="footer-menu">
+        <li><a href="delivery.html">Доставка</a></li>
+        <li><a href="guarantee.html">Гарантия</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+      <address>
+        <span>г. Москва, ул. Строителей, 15 </span> <span>Тел.: +7 (495) 495-95-95</span>
+      </address>
+      <div class="social">
+        <ul class="footer-social">
+          <li><a href="#" class="social-button fb">Facebook</a></li>
+          <li><a href="#" class="social-button instagram">Instagram</a></li>
+          <li><a href="#" class="social-button twitter">Twitter</a></li>
+        </ul>
+      </div>
+      <p class="footer-copyright">
+        <a href="https://htmlacademy.ru">
+          <img src="img/html-academy-logo.svg" alt="Разработано в HTML Academy" />
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>
