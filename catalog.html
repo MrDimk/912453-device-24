@@ -16,7 +16,12 @@
             alt="Логотип магазина «Девайс»"
           />
         </a>
-        <p class="header-search"><input type="text" placeholder="Поиск по сайту" /></p>
+        <form action="post">
+          <p class="header-search">
+            <input type="text" name="search-line" placeholder="Поиск по сайту" />
+            <button type="submit">Найти</button>
+          </p>
+        </form>
         <ul class="user-navigation">
           <li class="login-profile">Валентин Петухов</li>
           <li class="login-logout">Выйти</li>
@@ -59,13 +64,13 @@
         <h2 class="sort-title">Сортировка:</h2>
         <!-- Может быть сортировку корректнее делать с помощью input/radio? -->
         <ul class="sort-types">
-          <li class="sort-current">По цене</li>
-          <li>По типу</li>
-          <li>По популярности</li>
+          <li class="sort-current"><a href="#">По цене</a></li>
+          <li><a href="#">По типу</a></li>
+          <li><a href="#">По популярности</a></li>
         </ul>
         <p class="sort-order">
-          <a href="" class="forward order-current">По возрастанию</a>
-          <a href="" class="backward">По убыванию</a>
+          <a href="#" class="forward order-current">По возрастанию</a>
+          <a href="#" class="backward">По убыванию</a>
         </p>
       </section>
       <section class="catalog-items">
@@ -131,9 +136,9 @@
     </main>
     <footer class="site-footer">
       <p class="footer-logo">
-        <a class="footer-logo"
-          ><img src="http://placehold.it/162x35" alt="Логотип магазина «Девайс»"
-        /></a>
+        <a class="footer-logo">
+          <img src="http://placehold.it/162x35" alt="Логотип магазина «Девайс»" />
+        </a>
       </p>
       <ul class="footer-user-navigation">
         <li class="login-profile">Валентин Петухов</li>
@@ -159,7 +164,7 @@
         </ul>
       </div>
       <p class="footer-copyright">
-        <a href="https://htmlacademy.ru">
+        <a href="https://htmlacademy.ru/intensive/htmlcss">
           <img
             src="http://placehold.it/27x34"
             width="27"
