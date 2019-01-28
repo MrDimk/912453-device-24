@@ -16,7 +16,10 @@
             alt="Логотип магазина «Девайс»"
           />
         </a>
-        <p class="header-search"><input type="text" placeholder="Поиск по сайту" /></p>
+        <form action="post">
+          <input class="search-input" type="text" name="search-line" placeholder="Поиск по сайту" />
+          <button class="search-button" type="submit">Найти</button>
+        </form>
         <ul class="user-navigation">
           <li class="login-link">Вход</li>
         </ul>
@@ -235,13 +238,14 @@
     </main>
     <footer class="site-footer">
       <p class="footer-logo">
-        <a class="footer-logo"
-          ><img
+        <a class="footer-logo">
+          <img
             src="http://placehold.it/162x35"
             width="162"
             height="35"
             alt="Логотип магазина «Девайс»"
-        /></a>
+          />
+        </a>
       </p>
       <ul class="footer-user-navigation">
         <li class="login-link">Вход</li>

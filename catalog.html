@@ -17,10 +17,8 @@
           />
         </a>
         <form action="post">
-          <p class="header-search">
-            <input type="text" name="search-line" placeholder="Поиск по сайту" />
-            <button type="submit">Найти</button>
-          </p>
+          <input class="search-input" type="text" name="search-line" placeholder="Поиск по сайту" />
+          <button class="search-button" type="submit">Найти</button>
         </form>
         <ul class="user-navigation">
           <li class="login-profile">Валентин Петухов</li>
@@ -122,16 +120,15 @@
             <b class="price">4 900 руб.</b>
           </li>
         </ul>
-      </section>
-      <section class="pagination">
-        <h2 class="visually-hidden">Страницы каталога</h2>
-        <span class="pagination-previous"><a href="catalog.html">Назад</a></span>
-        <ul class="pagination-list">
-          <li class="pagination-item-current">1</li>
-          <li><a href="catalog.html">2</a></li>
-          <li><a href="catalog.html">3</a></li>
-        </ul>
-        <span class="pagination-previous"><a href="catalog.html">Вперед</a></span>
+        <div class="pagination">
+          <span class="pagination-previous"><a href="catalog.html">Назад</a></span>
+          <ul class="pagination-list">
+            <li class="pagination-item-current">1</li>
+            <li><a href="catalog.html">2</a></li>
+            <li><a href="catalog.html">3</a></li>
+          </ul>
+          <span class="pagination-previous"><a href="catalog.html">Вперед</a></span>
+        </div>
       </section>
     </main>
     <footer class="site-footer">
