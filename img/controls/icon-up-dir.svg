@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.2;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+      }
+    </style>
+  </defs>
+  <g id="icon-up-dir" class="cls-1">
+    <g id="icon-up-dir-2" data-name="icon-up-dir">
+      <path id="Shape" class="cls-2" d="M5.5,0,0,10H11Z"/>
+    </g>
+  </g>
+</svg>

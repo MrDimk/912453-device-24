@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="12.937" height="12" viewBox="0 0 12.937 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc600;
+      }
+    </style>
+  </defs>
+  <g id="user-yellow" transform="translate(-0.032)">
+    <g id="user">
+      <path id="Shape" class="cls-1" d="M0,12H12.937A6.215,6.215,0,0,0,8.266,6.457a3.486,3.486,0,1,0-3.595,0A6.214,6.214,0,0,0,0,12Z" transform="translate(0.032)"/>
+    </g>
+  </g>
+</svg>

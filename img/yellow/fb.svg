@@ -1,0 +1,17 @@
+<svg id="fb"
+  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.3;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="fb-2" data-name="fb" class="cls-1">
+    <path id="Shape" class="cls-2" d="M16,32A16,16,0,0,1,4.687,4.686,16,16,0,0,1,27.314,27.314,15.9,15.9,0,0,1,16,32ZM11,12.9v3.445h3.02v8.61h3.02v-8.61h3.021V12.9H17.041V9.455h3.021V6.01h-3.02a3.258,3.258,0,0,0-3.021,3.445V12.9Z"/>
+  </g>
+</svg>

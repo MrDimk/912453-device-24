@@ -1,0 +1,13 @@
+<svg id="compare"
+  xmlns="http://www.w3.org/2000/svg" width="9.984" height="10" viewBox="0 0 9.984 10">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffc600;
+      }
+    </style>
+  </defs>
+  <g id="compare-2" data-name="compare">
+    <path id="Shape" class="cls-1" d="M9.984,10H8V2H9.984v8Zm-8,0H0V3H1.984v7ZM6,10H4V0H6V10Z"/>
+  </g>
+</svg>
