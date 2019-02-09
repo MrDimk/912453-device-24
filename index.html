@@ -11,12 +11,15 @@
         <a class="header-logo">
           <img src="img/logo.svg" width="162" height="35" alt="Логотип магазина «Девайс»" />
         </a>
-        <form action="post">
+        <form action="https://echo.htmlacademy.ru" method="GET">
+          <label for="search-field" class="visually-hidden">Поиск по сайту</label>
           <input class="search-input" type="text" name="search-line" placeholder="Поиск по сайту" />
           <button class="search-button" type="submit">Найти</button>
         </form>
         <ul class="user-navigation">
-          <li class="login-link">Вход</li>
+          <li class="login-link">
+            <a href="authorization.html">Вход</a>
+          </li>
         </ul>
         <ul class="purchase-menu">
           <li class="compare"><a href="compare.html">Сравнить</a></li>
@@ -52,7 +55,7 @@
                 src="img/slider/slider-1.png"
                 width="384"
                 height="486"
-                alt="Фотография продукта"
+                alt="Фотография палки для селфи"
                 class="product-preview"
               />
             </div>
@@ -63,7 +66,7 @@
                 метров длиной и весом всего 5 килограмм.
               </span>
             </p>
-            <a class="button">Подробнее</a>
+            <a href="item.html" class="button" aria-label="Подробнее о товаре">Подробнее</a>
             <table class="popular-item-properties">
               <thead>
                 <tr>
@@ -88,7 +91,7 @@
                 src="img/slider/slider-2.png"
                 width="345"
                 height="485"
-                alt="Фотография продукта"
+                alt="Фотография фитнес-браслета"
                 class="product-preview"
               />
             </div>
@@ -99,7 +102,7 @@
                 соблюдать диету.
               </span>
             </p>
-            <a class="button">Подробнее</a>
+            <a href="item.html" class="button" aria-label="Подробнее о товаре">Подробнее</a>
             <table class="popular-item-properties">
               <thead>
                 <tr>
@@ -120,7 +123,7 @@
                 src="img/slider/slider-3.png"
                 width="526"
                 height="334"
-                alt="Фотография продукта"
+                alt="Фотография квадрокоптера"
                 class="product-preview"
               />
             </div>
@@ -131,7 +134,7 @@
                 под стандартную камеру.
               </span>
             </p>
-            <a class="button">Подробнее</a>
+            <a href="item.html" class="button" aria-label="Подробнее о товаре">Подробнее</a>
             <table class="popular-item-properties">
               <thead>
                 <tr>
@@ -149,9 +152,17 @@
           </li>
         </ol>
         <ul class="slider-controls">
-          <li class="current">1</li>
-          <li>2</li>
-          <li>3</li>
+          <li>
+            <button class="slider-control current" type="button" aria-label="Выбор слайда 1">
+              1
+            </button>
+          </li>
+          <li>
+            <button class="slider-control" type="button" aria-label="Выбор слайда 1">2</button>
+          </li>
+          <li>
+            <button class="slider-control" type="button" aria-label="Выбор слайда 1">3</button>
+          </li>
         </ul>
       </section>
       <section class="categories">
@@ -200,16 +211,16 @@
         <h2 class="visually-hidden">Популярные бренды</h2>
         <ul class="brands">
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-1.jpg" alt="DJI" /></p>
+            <p class="brand-logo"><img src="img/brands/logo-1.jpg" alt="Логотип DJI" /></p>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-2.jpg" alt="SP-Gadgets" /></p>
+            <p class="brand-logo"><img src="img/brands/logo-2.jpg" alt="Логотип SP-Gadgets" /></p>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-3.jpg" alt="GoPro" /></p>
+            <p class="brand-logo"><img src="img/brands/logo-3.jpg" alt="Логотип GoPro" /></p>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-4.jpg" alt="VIVE" /></p>
+            <p class="brand-logo"><img src="img/brands/logo-4.jpg" alt="Логотип VIVE" /></p>
           </li>
         </ul>
       </section>
@@ -237,6 +248,50 @@
         </p>
         <div class="contacts-map"></div>
         <a class="button">Напишите нам</a>
+      </section>
+      <section class="modal-feedback hidden">
+        <h2 class="visually-hidden">Форма обратной связи</h2>
+        <form action="post" class="feedback-form" action="https://echo.htmlacademy.ru">
+          <p class="form-item">
+            <label for="name-field">Ваше имя:</label>
+            <input type="text" id="name-field" name="name" value="" placeholder="Имя Фамилия" />
+          </p>
+          <p class="form-item">
+            <label for="email-field">Ваш e-mail:</label>
+            <input
+              type="text"
+              id="email-field"
+              name="name"
+              value=""
+              placeholder="email@example.com"
+            />
+          </p>
+          <p class="form-item">
+            <label for="message-field">Текст письма:</label>
+            <input
+              type="text"
+              id="message-field"
+              name="name"
+              value=""
+              placeholder="В свободной форме"
+            />
+          </p>
+          <button class="button" type="submit">Отправить</button>
+        </form>
+        <button class="modal-close" type="button" aria-label="Закрыть окно обратной связи">
+          Закрыть
+        </button>
+      </section>
+      <section class="modal-map">
+        <h2 class="visually-hidden">Наш магазин на карте</h2>
+        <img
+          src="/img/map-big.jpg"
+          width="960"
+          height="559"
+          alt="Адрес магазина: Москва, ул. Строителей, 15"
+          class="map"
+        />
+        <button class="modal-close" type="button" aria-label="Закрыть карту">Закрыть</button>
       </section>
     </main>
     <footer class="site-footer">

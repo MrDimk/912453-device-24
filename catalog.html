@@ -9,20 +9,26 @@
     <header class="main-header">
       <nav class="site-navigation">
         <a href="index.html" class="header-logo">
-          <img
-            src="img/logo.svg"
-            width="162"
-            height="35"
-            alt="Логотип магазина «Девайс»"
-          />
+          <img src="img/logo.svg" width="162" height="35" alt="Логотип магазина «Девайс»" />
         </a>
         <form action="post">
-          <input class="search-input" type="text" name="search-line" placeholder="Поиск по сайту" />
+          <label for="search-field" class="visually-hidden">Поиск по сайту</label>
+          <input
+            class="search-input"
+            id="search-field"
+            type="text"
+            name="search-line"
+            placeholder="Поиск по сайту"
+          />
           <button class="search-button" type="submit">Найти</button>
         </form>
         <ul class="user-navigation">
-          <li class="login-profile">Валентин Петухов</li>
-          <li class="login-logout">Выйти</li>
+          <li class="login-profile">
+            <a href="profile.html">Валентин Петухов</a>
+          </li>
+          <li class="login-logout">
+            <a href="logout.html">Выйти</a>
+          </li>
         </ul>
         <ul class="purchase-menu">
           <li class="compare"><a href="compare.html">Сравнить</a></li>
@@ -57,10 +63,69 @@
       <section class="catalog-filters">
         <h2 class="filters-title">Фильтр:</h2>
         <!-- Форма с фильтрами -->
+        <form action="https://echo.htmlacademy.ru" class="filter-form" method="GET">
+          <fieldset class="filter-group">
+            <legend>Стоимость</legend>
+            <label for="price-lowest" class="price-filter-label">От 0</label>
+            <input type="number" id="price-lowest" class="price-filter-input" />
+            <label for="price-lowest" class="price-filter-label">До 5000</label>
+            <input type="number" id="price-highest" class="price-filter-input" />
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Цвет</legend>
+            <ul>
+              <li>
+                <input type="checkbox" id="color-black" class="checkbox-input" checked />
+                <label for="color-black">Черный</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-white" class="checkbox-input" />
+                <label for="color-white">Белый</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-blue" class="checkbox-input" checked />
+                <label for="color-blue">Синий</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-red" class="checkbox-input" checked />
+                <label for="color-red">Красный</label>
+              </li>
+              <li>
+                <input type="checkbox" id="color-pink" class="checkbox-input" />
+                <label for="color-pink">Розовый</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="filter-group">
+            <legend>Bluetooth</legend>
+            <ul>
+              <li>
+                <input
+                  type="radio"
+                  id="radio-bt-true"
+                  class="radio-input"
+                  name="bluetooth"
+                  value="true"
+                />
+                <label for="radio-bt-true">Есть</label>
+              </li>
+              <li>
+                <input
+                  type="radio"
+                  id="radio-bt-false"
+                  class="radio-input"
+                  name="bluetooth"
+                  value="true"
+                />
+                <label for="radio-bt-false">Нет</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button class="button" type="submit">Показать</button>
+        </form>
       </section>
       <section class="catalog-sort">
         <h2 class="sort-title">Сортировка:</h2>
-        <!-- Может быть сортировку корректнее делать с помощью input/radio? -->
         <ul class="sort-types">
           <li class="sort-current"><a href="#">По цене</a></li>
           <li><a href="#">По типу</a></li>
@@ -80,7 +145,12 @@
               <a href="catalog-item.html">Любительская селфи-палка</a>
             </h3>
             <p>
-              <img src="img/products/item-1.jpg" width="360" height="380" alt="Фото товара" />
+              <img
+                src="img/products/item-1.jpg"
+                width="360"
+                height="380"
+                alt="Фото селфи-палки с телефоном"
+              />
               <a class="button">В корзину</a> <a class="to-compare">Добавить к сравнению</a>
             </p>
             <b class="price">500 руб.</b>
@@ -91,7 +161,12 @@
               <a href="catalog-item.html">Профессиональная селфи-палка </a>
             </h3>
             <p>
-              <img src="img/products/item-2.jpg" width="360" height="380" alt="Фото товара" />
+              <img
+                src="img/products/item-2.jpg"
+                width="360"
+                height="380"
+                alt="Сложенная селфи-палка"
+              />
               <a class="button">В корзину</a> <a class="to-compare">Добавить к сравнению</a>
             </p>
             <b class="price">1 500 руб.</b>
@@ -102,7 +177,12 @@
               <a href="catalog-item.html">Непотопляемая селфи-палка</a>
             </h3>
             <p>
-              <img src="img/products/item-3.jpg" width="360" height="380" alt="Фото товара" />
+              <img
+                src="img/products/item-3.jpg"
+                width="360"
+                height="380"
+                alt="Плавучая селфи-палка с экше-камерой"
+              />
               <a class="button">В корзину</a> <a class="to-compare">Добавить к сравнению</a>
             </p>
             <b class="price">2 500 руб.</b>
@@ -113,7 +193,12 @@
               <a href="catalog-item.html">Селфи-палка «Следуй за мной»</a>
             </h3>
             <p>
-              <img src="img/products/item-4.jpg" width="360" height="380" alt="Фото товара" />
+              <img
+                src="img/products/item-4.jpg"
+                width="360"
+                height="380"
+                alt="Селфи-палка в виде руки"
+              />
               <a class="button">В корзину</a> <a class="to-compare">Добавить к сравнению</a>
               <span class="mark-new">New</span>
             </p>
@@ -138,8 +223,12 @@
         </a>
       </p>
       <ul class="footer-user-navigation">
-        <li class="login-profile">Валентин Петухов</li>
-        <li class="login-logout">Выйти</li>
+        <li class="login-profile">
+          <a href="profile.html">Валентин Петухов</a>
+        </li>
+        <li class="login-logout">
+          <a href="logout.html">Выйти</a>
+        </li>
       </ul>
       <ul class="footer-purchase-menu">
         <li class="compare"><a href="compare.html">Сравнить</a></li>
