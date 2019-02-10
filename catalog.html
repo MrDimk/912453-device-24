@@ -66,32 +66,34 @@
         <form action="https://echo.htmlacademy.ru" class="filter-form" method="GET">
           <fieldset class="filter-group">
             <legend>Стоимость</legend>
-            <label for="price-lowest" class="price-filter-label">От 0</label>
-            <input type="number" id="price-lowest" class="price-filter-input" />
-            <label for="price-lowest" class="price-filter-label">До 5000</label>
-            <input type="number" id="price-highest" class="price-filter-input" />
+            <label for="price-lowest" class="price-filter-label">От</label>
+            <input type="number" id="price-lowest" class="price-filter-input" value="0" />
+            <label for="price-highest" class="price-filter-label">До</label>
+            <input type="text" id="price-highest" class="price-filter-input" value="5000" />
+            <button class="range-point" id="range-from"></button>
+            <button class="range-point" id="range-to"></button>
           </fieldset>
           <fieldset class="filter-group">
             <legend>Цвет</legend>
             <ul>
               <li>
-                <input type="checkbox" id="color-black" class="checkbox-input" checked />
+                <input type="checkbox" id="color-black" class="checkbox-input visually-hidden" name="color" value="black" checked />
                 <label for="color-black">Черный</label>
               </li>
               <li>
-                <input type="checkbox" id="color-white" class="checkbox-input" />
+                <input type="checkbox" id="color-white" class="checkbox-input visually-hidden" name="color" value="white"/>
                 <label for="color-white">Белый</label>
               </li>
               <li>
-                <input type="checkbox" id="color-blue" class="checkbox-input" checked />
+                <input type="checkbox" id="color-blue" class="checkbox-input visually-hidden" name="color" value="blue" checked />
                 <label for="color-blue">Синий</label>
               </li>
               <li>
-                <input type="checkbox" id="color-red" class="checkbox-input" checked />
+                <input type="checkbox" id="color-red" class="checkbox-input visually-hidden" name="color" value="red" checked />
                 <label for="color-red">Красный</label>
-              </li>
+              </li class="checkbox-input">
               <li>
-                <input type="checkbox" id="color-pink" class="checkbox-input" />
+                <input type="checkbox" id="color-pink" class="checkbox-input visually-hidden" name="color" value="pink"/>
                 <label for="color-pink">Розовый</label>
               </li>
             </ul>
@@ -103,9 +105,10 @@
                 <input
                   type="radio"
                   id="radio-bt-true"
-                  class="radio-input"
+                  class="radio-input visually-hidden"
                   name="bluetooth"
                   value="true"
+                  checked
                 />
                 <label for="radio-bt-true">Есть</label>
               </li>
@@ -113,9 +116,9 @@
                 <input
                   type="radio"
                   id="radio-bt-false"
-                  class="radio-input"
+                  class="radio-input visually-hidden"
                   name="bluetooth"
-                  value="true"
+                  value="false"
                 />
                 <label for="radio-bt-false">Нет</label>
               </li>
@@ -132,15 +135,15 @@
           <li><a href="#">По популярности</a></li>
         </ul>
         <p class="sort-order">
-          <a href="#" class="forward order-current">По возрастанию</a>
-          <a href="#" class="backward">По убыванию</a>
+          <a href="#" class="forward order-current" aria-label="По возрастанию"></a>
+          <a href="#" class="backward" aria-label="По убыванию"></a>
         </p>
       </section>
       <section class="catalog-items">
         <h2 class="visually-hidden">Товары в категории</h2>
         <ul class="catalog-list">
           <!-- Item 1 -->
-          <li>
+          <li class="catalog-item">
             <h3 class="catalog-item-title">
               <a href="catalog-item.html">Любительская селфи-палка</a>
             </h3>
@@ -156,7 +159,7 @@
             <b class="price">500 руб.</b>
           </li>
           <!-- Item 2 -->
-          <li>
+          <li class="catalog-item">
             <h3 class="catalog-item-title">
               <a href="catalog-item.html">Профессиональная селфи-палка </a>
             </h3>
@@ -172,7 +175,7 @@
             <b class="price">1 500 руб.</b>
           </li>
           <!-- Item 3 -->
-          <li>
+          <li class="catalog-item">
             <h3 class="catalog-item-title">
               <a href="catalog-item.html">Непотопляемая селфи-палка</a>
             </h3>
@@ -188,7 +191,7 @@
             <b class="price">2 500 руб.</b>
           </li>
           <!-- Item 4 -->
-          <li>
+          <li class="catalog-item mark-new">
             <h3 class="catalog-item-title">
               <a href="catalog-item.html">Селфи-палка «Следуй за мной»</a>
             </h3>
@@ -200,7 +203,6 @@
                 alt="Селфи-палка в виде руки"
               />
               <a class="button">В корзину</a> <a class="to-compare">Добавить к сравнению</a>
-              <span class="mark-new">New</span>
             </p>
             <b class="price">4 900 руб.</b>
           </li>
@@ -244,9 +246,9 @@
       </address>
       <div class="social">
         <ul class="footer-social">
-          <li><a href="#" class="social-button fb">Facebook</a></li>
-          <li><a href="#" class="social-button instagram">Instagram</a></li>
-          <li><a href="#" class="social-button twitter">Twitter</a></li>
+          <li><a href="#" class="social-button fb" aria-label="Facebook"></a></li>
+          <li><a href="#" class="social-button instagram" aria-label="Instagram"></a></li>
+          <li><a href="#" class="social-button twitter" aria-label="Twitter"></a></li>
         </ul>
       </div>
       <p class="footer-copyright">
