@@ -67,33 +67,66 @@
           <fieldset class="filter-group">
             <legend>Стоимость</legend>
             <label for="price-lowest" class="price-filter-label">От</label>
-            <input type="number" id="price-lowest" class="price-filter-input" value="0" />
+            <input type="text" id="price-lowest" class="price-filter-input" name="price-lowest" value="0" />
             <label for="price-highest" class="price-filter-label">До</label>
-            <input type="text" id="price-highest" class="price-filter-input" value="5000" />
-            <button class="range-point" id="range-from"></button>
-            <button class="range-point" id="range-to"></button>
+            <input type="text" id="price-highest" class="price-filter-input" name="price-highest" value="5000" />
+            <button class="range-point" id="range-from" type="button"></button>
+            <button class="range-point" id="range-to" type="button"></button>
           </fieldset>
           <fieldset class="filter-group">
             <legend>Цвет</legend>
             <ul>
               <li>
-                <input type="checkbox" id="color-black" class="checkbox-input visually-hidden" name="color" value="black" checked />
+                <input
+                  type="checkbox"
+                  id="color-black"
+                  class="checkbox-input visually-hidden"
+                  name="color"
+                  value="black"
+                  checked
+                />
                 <label for="color-black">Черный</label>
               </li>
               <li>
-                <input type="checkbox" id="color-white" class="checkbox-input visually-hidden" name="color" value="white"/>
+                <input
+                  type="checkbox"
+                  id="color-white"
+                  class="checkbox-input visually-hidden"
+                  name="color"
+                  value="white"
+                />
                 <label for="color-white">Белый</label>
               </li>
               <li>
-                <input type="checkbox" id="color-blue" class="checkbox-input visually-hidden" name="color" value="blue" checked />
+                <input
+                  type="checkbox"
+                  id="color-blue"
+                  class="checkbox-input visually-hidden"
+                  name="color"
+                  value="blue"
+                  checked
+                />
                 <label for="color-blue">Синий</label>
               </li>
               <li>
-                <input type="checkbox" id="color-red" class="checkbox-input visually-hidden" name="color" value="red" checked />
+                <input
+                  type="checkbox"
+                  id="color-red"
+                  class="checkbox-input visually-hidden"
+                  name="color"
+                  value="red"
+                  checked
+                />
                 <label for="color-red">Красный</label>
-              </li class="checkbox-input">
+              </li>
               <li>
-                <input type="checkbox" id="color-pink" class="checkbox-input visually-hidden" name="color" value="pink"/>
+                <input
+                  type="checkbox"
+                  id="color-pink"
+                  class="checkbox-input visually-hidden"
+                  name="color"
+                  value="pink"
+                />
                 <label for="color-pink">Розовый</label>
               </li>
             </ul>
