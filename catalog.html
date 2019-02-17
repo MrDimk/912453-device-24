@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Магазин гаджетов - DEVICE</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="main-header">
@@ -12,15 +13,17 @@
           <img src="img/logo.svg" width="162" height="35" alt="Логотип магазина «Девайс»" />
         </a>
         <form action="post">
-          <label for="search-field" class="visually-hidden">Поиск по сайту</label>
-          <input
-            class="search-input"
-            id="search-field"
-            type="text"
-            name="search-line"
-            placeholder="Поиск по сайту"
-          />
-          <button class="search-button" type="submit">Найти</button>
+          <div class="search-block">
+            <label for="search-field" class="visually-hidden">Поиск по сайту</label>
+            <input
+              class="search-input"
+              id="search-field"
+              type="text"
+              name="search-line"
+              placeholder="Поиск по сайту"
+            />
+            <button class="search-button" type="submit">Найти</button>
+          </div>
         </form>
         <ul class="user-navigation">
           <li class="login-profile">
@@ -67,9 +70,21 @@
           <fieldset class="filter-group">
             <legend>Стоимость</legend>
             <label for="price-lowest" class="price-filter-label">От</label>
-            <input type="text" id="price-lowest" class="price-filter-input" name="price-lowest" value="0" />
+            <input
+              type="text"
+              id="price-lowest"
+              class="price-filter-input"
+              name="price-lowest"
+              value="0"
+            />
             <label for="price-highest" class="price-filter-label">До</label>
-            <input type="text" id="price-highest" class="price-filter-input" name="price-highest" value="5000" />
+            <input
+              type="text"
+              id="price-highest"
+              class="price-filter-input"
+              name="price-highest"
+              value="5000"
+            />
             <button class="range-point" id="range-from" type="button"></button>
             <button class="range-point" id="range-to" type="button"></button>
           </fieldset>

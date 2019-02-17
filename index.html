@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Магазин гаджетов - DEVICE</title>
-    <link rel="stylesheet" href="style.css" />
+    <!--castom normalization added into the 'styles.css' -->
+    <!--<link rel="stylesheet" href="css/normalize.css" />-->
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="main-header">
@@ -12,15 +14,17 @@
           <img src="img/logo.svg" width="162" height="35" alt="Логотип магазина «Девайс»" />
         </a>
         <form action="https://echo.htmlacademy.ru" method="GET">
-          <label for="search-field" class="visually-hidden">Поиск по сайту</label>
-          <input
-            class="search-input"
-            id="search-field"
-            type="text"
-            name="search-line"
-            placeholder="Поиск по сайту"
-          />
-          <button class="search-button" type="submit">Найти</button>
+          <div class="search-block">
+            <label for="search-field" class="visually-hidden">Поиск по сайту</label>
+            <input
+              class="search-input"
+              id="search-field"
+              type="text"
+              name="search-line"
+              placeholder="Поиск по сайту"
+            />
+            <button class="search-button" type="submit">Найти</button>
+          </div>
         </form>
         <ul class="user-navigation">
           <li class="login-link">
@@ -160,16 +164,24 @@
         <ul class="slider-controls">
           <li>
             <button
-              class="slider-control current"
+              class="slider-control current visually-hidden"
               type="button"
               aria-label="Выбор слайда 1"
             ></button>
           </li>
           <li>
-            <button class="slider-control" type="button" aria-label="Выбор слайда 2"></button>
+            <button
+              class="slider-control visually-hidden"
+              type="button"
+              aria-label="Выбор слайда 2"
+            ></button>
           </li>
           <li>
-            <button class="slider-control" type="button" aria-label="Выбор слайда 3"></button>
+            <button
+              class="slider-control visually-hidden"
+              type="button"
+              aria-label="Выбор слайда 3"
+            ></button>
           </li>
         </ul>
       </section>
