@@ -15,7 +15,6 @@
         </a>
         <form action="https://echo.htmlacademy.ru" method="GET">
           <div class="search-block">
-            <label for="search-field" class="visually-hidden">Поиск по сайту</label>
             <input
               class="search-input"
               id="search-field"
@@ -24,6 +23,7 @@
               placeholder="Поиск по сайту"
             />
             <button class="search-button" type="submit">Найти</button>
+            <label for="search-field" class="search-label" aria-label="Поиск по сайту"></label>
           </div>
         </form>
         <ul class="user-navigation">
@@ -188,12 +188,12 @@
       <section class="categories">
         <h2 class="visually-hidden">Категории товаров</h2>
         <ul class="categories-list">
-          <li><a href="catalog.html" class="submenu-item">Виртуальная реальность</a></li>
-          <li><a href="catalog.html" class="categories-item">Моноподы для селфи</a></li>
-          <li><a href="catalog.html" class="categories-item">Экшн-камеры</a></li>
-          <li><a href="catalog.html" class="categories-item">Фитнеc-браслеты</a></li>
-          <li><a href="catalog.html" class="categories-item">Умные часы</a></li>
-          <li><a href="catalog.html" class="categories-item">Квадрокоптеры</a></li>
+          <li><a href="catalog.html" class="categories-item vr">Виртуальная реальность</a></li>
+          <li><a href="catalog.html" class="categories-item selfie">Моноподы для селфи</a></li>
+          <li><a href="catalog.html" class="categories-item cameras">Экшн-камеры</a></li>
+          <li><a href="catalog.html" class="categories-item bands">Фитнеc-браслеты</a></li>
+          <li><a href="catalog.html" class="categories-item smart-watches">Умные часы</a></li>
+          <li><a href="catalog.html" class="categories-item copters">Квадрокоптеры</a></li>
         </ul>
       </section>
       <section class="advantages">
@@ -231,16 +231,16 @@
         <h2 class="visually-hidden">Популярные бренды</h2>
         <ul class="brands">
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-1.jpg" alt="Логотип DJI" /></p>
+            <div class="brand-logo dji" aria-label="">Логотип DJI</div>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-2.jpg" alt="Логотип SP-Gadgets" /></p>
+            <div class="brand-logo sp-gadgets">Логотип SP-Gadgets</div>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-3.jpg" alt="Логотип GoPro" /></p>
+            <div class="brand-logo gopro">Логотип GoPro</div>
           </li>
           <li>
-            <p class="brand-logo"><img src="img/brands/logo-4.jpg" alt="Логотип VIVE" /></p>
+            <div class="brand-logo vive">Логотип VIVE</div>
           </li>
         </ul>
       </section>
@@ -266,7 +266,11 @@
           Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить
           работоспособность покупки. Всякое бывает.
         </p>
-        <a href="map.htlm" aria-label="Наш магазин на карте"><div class="contacts-map"></div></a>
+        <a href="map.htlm">
+          <div class="contacts-map">
+            <img src="img/map.jpg" alt="Наш магазин на карте" />
+          </div>
+        </a>
         <a class="button">Напишите нам</a>
       </section>
       <section class="modal-feedback hidden">

@@ -42,17 +42,29 @@ body {
   color: #464646;
 }
 
-a {
+.categories-list a,
+.site-navigation a,
+.site-footer a,
+.button,
+.catalog-page a {
   text-decoration: none;
   color: #000000;
 }
 
-h1,
-h2,
-h3,
-section {
+.main-page section {
   margin: 0;
 }
+/************** blocks visualisation ********************//*
+* {
+  outline: 1px;
+  outline-color: rgba(0, 0, 255, 0.2);
+  outline-style: dashed;
+}
+
+*:hover {
+  outline-color: red;
+}
+/**********************************************************/
 
 .visually-hidden {
   position: absolute;
@@ -66,7 +78,6 @@ section {
 .button {
   position: relative;
   box-sizing: border-box;
-  /* margin: 0 45px; */
   padding: 0 45px;
   display: inline-block;
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
@@ -114,19 +125,17 @@ section {
   color: #000000;
 }
 
-.site-navigation li,
-.popular-slider li,
-.slider-controls li,
-.categories-list li,
-.advantages-slider li,
-.brands li,
-.logistics li,
-.site-footer li,
+.main-header ul,
 .breadcrumbs,
-.catalog-filters li,
-.catalog-sort li,
-.catalog-items li {
+.main-page ul,
+.main-page ol,
+.catalog-page ul,
+.site-footer ul {
   list-style: none;
+}
+
+.header-logo:hover {
+  opacity: 0.6;
 }
 
 .header-menu {
@@ -168,24 +177,48 @@ section {
   background-image: url("../img/search.svg");
 }
 
+.search-label {
+  display: block;
+  width: 100%;
+  background-color: #fff;
+}
+.search-input:focus ~ label {
+  position: absolute;
+  width: 440px;
+  border-bottom: 2px solid #000000;
+}
+
 .site-navigation .search-input {
   background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.3);
+
+  width: 290px;
+  padding: 0 20px;
   border: none;
+
+  font-family: "Open-Sans-Light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+}
+
+.site-navigation .search-input::placeholder {
   color: rgba(0, 0, 0, 0.3);
 }
-.site-navigation .search-input:hover {
+
+.site-navigation .search-input:hover::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
 
 .site-navigation .search-input:focus {
-  color: rgba(0, 0, 0, 1);
+  color: #000000;
   outline: none;
 }
 
 .site-navigation .search-button {
   width: 85px;
   height: 50px;
-  display: inline-block;
+  display: none;
   background-color: rgba(0, 0, 0, 0);
   color: #000000;
   border: 2px solid #000000;
@@ -195,6 +228,9 @@ section {
   letter-spacing: 0.01em;
   text-transform: none;
 }
+.search-input:focus ~ button {
+  display: inline-block;
+}
 .site-navigation .search-button:hover,
 .site-navigation .search-button:focus {
   background-color: #000000;
@@ -203,6 +239,7 @@ section {
 }
 
 .site-navigation .search-button:active {
+  display: inline-block;
   background-color: #000000;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -268,47 +305,62 @@ section {
   text-transform: none;
 }
 
+.categories-list li::before {
+  content: "";
+  display: block;
+  width: 160px;
+  height: 160px;
+  padding: 2px;
+  background-color: rgba(240, 197, 46, 0.5);
+}
+
 .categories-list a::before {
   content: "";
   display: block;
   box-sizing: border-box;
   width: 160px;
   height: 160px;
+  margin-top: -162px;
+  margin-left: 2px;
   padding: 2px;
-  background-color: rgba(240, 197, 46, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   background-origin: content-box;
 }
 
-.categories-list li:nth-child(1) a::before {
+.categories-list a.vr::before {
   background-image: url("../img/popular-1.svg");
 }
-.categories-list li:nth-child(2) a::before {
+.categories-list a.selfie::before {
   background-image: url("../img/popular-2.svg");
   background-position: bottom;
 }
-.categories-list li:nth-child(3) a::before {
+.categories-list a.cameras::before {
   background-image: url("../img/popular-3.svg");
 }
-.categories-list li:nth-child(4) a::before {
+.categories-list a.bands::before {
   background-image: url("../img/popular-4.svg");
 }
-.categories-list li:nth-child(5) a::before {
+.categories-list a.smart-watches::before {
   background-image: url("../img/popular-5.svg");
 }
-.categories-list li:nth-child(6) a::before {
+.categories-list a.copters::before {
   background-image: url("../img/popular-6.svg");
 }
 
-.categories-list a:hover::before {
+.categories-list a:hover::before,
+.categories-list li:hover::before {
   background-color: rgba(240, 197, 46, 1);
 }
 
+.categories-list a:active,
+.categories-list a:active::before {
+  opacity: 0.3; /* в макете значение 30%, но на глаз выглядит как 50% */
+}
 
 /*Index - Advantages section*/
 .advantages .slider-controls {
-  position: absolute;
+  position: relative;
   border-right: 7px solid #000000;
   width: 280px;
   z-index: 2;
@@ -361,13 +413,33 @@ section {
 
 /*Index - Brands section*/
 .brand-logo {
-  filter: grayscale(1) opacity(0.2);
+  width: 260px;
+  height: 100px;
+
+  background-image: url("../img/brands/brands-sprite.jpg");
+  background-position-x: 260px;
+  opacity: 0.2;
+
+  font-size: 0px;
+}
+
+.brand-logo.dji {
+  background-position-y: 0px;
+}
+.brand-logo.sp-gadgets {
+  background-position-y: 100px;
+}
+.brand-logo.gopro {
+  background-position-y: 200px;
+}
+.brand-logo.vive {
+  background-position-y: 300px;
 }
 
 .brand-logo:hover {
-  filter: grayscale(0) opacity(1);
+  background-position-x: 0px;
+  opacity: 1;
 }
-
 
 /*Index - About and Contacts sections*/
 .about .about-title,
@@ -410,13 +482,10 @@ section {
   border-radius: 50%;
 }
 
-.contacts-map {
+.contacts-map img {
   width: 560px;
   height: 222px;
-  background-repeat: no-repeat;
-  background-image: url("../img/map.jpg");
 }
-
 
 /* Modal windows */
 
@@ -440,7 +509,7 @@ section {
   font-family: "Open-Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 18px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0em;
   color: #464646;
   border: none;
 }
@@ -477,19 +546,23 @@ textarea:focus {
 }
 .modal-close::before,
 .modal-close::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
-  margin-left: 4.5px;
+  margin-left: 5px;
   width: 30px;
   height: 2px;
   background-color: #ffffff;
 }
 
-.modal-close::before {transform: rotate(45deg);}
-.modal-close::after {transform: rotate(-45deg);}
+.modal-close::before {
+  transform: rotate(45deg);
+}
+.modal-close::after {
+  transform: rotate(-45deg);
+}
 
-.modal-close:hover  {
+.modal-close:hover {
   background-color: rgba(240, 197, 46, 1);
 }
 
@@ -497,19 +570,13 @@ textarea:focus {
   background-color: rgba(240, 197, 46, 0.3);
 }
 
-
 /* Footer */
 
 .site-footer,
 .site-footer address {
   background-color: #464646;
-  color: #FFFFFF;
+  color: #ffffff;
   font-style: normal;
-}
-
-.footer-user-navigation a,
-.footer-purchase-menu a {
-  color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-menu a {
@@ -521,36 +588,85 @@ textarea:focus {
   text-transform: uppercase;
 }
 
+.site-footer a {
+  color: #ffffff;
+}
+.site-footer a:hover {
+  opacity: 0.6;
+}
+
+.site-footer a:active {
+  opacity: 0.3;
+}
+
+.footer-user-navigation a,
+.footer-purchase-menu a {
+  opacity: 0.7;
+}
+
+.footer-user-navigation a:hover,
+.footer-purchase-menu a:hover {
+  opacity: 1;
+}
+
+.footer-user-navigation a:active,
+.footer-purchase-menu a:active {
+  opacity: 0.3;
+}
+
 .social-button {
   display: inline-block;
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.0);
+  opacity: 0.3;
 }
 
 .social-button.fb {
-  background-image: url('../img/yellow/fb.svg');
+  background-image: url("../img/yellow/fb.svg");
 }
 
 .social-button.instagram {
-  background-image: url('../img/yellow/instagram.svg');
+  background-image: url("../img/yellow/instagram.svg");
 }
 
 .social-button.twitter {
-  background-image: url('../img/yellow/twitter.svg');
+  background-image: url("../img/yellow/twitter.svg");
 }
 
-.social-button:hover::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 32px;
-  background-image: inherit;
+.social-button:hover {
+  opacity: 0.6;
 }
 
 .social-button:active {
-  filter: opacity(0.33);
+  opacity: 0.1;
+}
+
+/******************Catalog******************/
+.catalog-page h1 {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 47px;
+  line-height: 48px;
+  letter-spacing: 0.00357em;
+  color: #000000;
+}
+
+.breadcrumbs,
+.breadcrumbs a {
+  font-family: "Open-Sans-Light", Arial, sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumbs a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.breadcrumbs a:active {
+  color: rgba(0, 0, 0, 0.1);
 }
 
 /*********/
