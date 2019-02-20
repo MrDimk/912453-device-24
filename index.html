@@ -3,8 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>Магазин гаджетов - DEVICE</title>
-    <!--castom normalization added into the 'styles.css' -->
-    <!--<link rel="stylesheet" href="css/normalize.css" />-->
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -164,24 +163,16 @@
         <ul class="slider-controls">
           <li>
             <button
-              class="slider-control current visually-hidden"
+              class="slider-control current"
               type="button"
               aria-label="Выбор слайда 1"
             ></button>
           </li>
           <li>
-            <button
-              class="slider-control visually-hidden"
-              type="button"
-              aria-label="Выбор слайда 2"
-            ></button>
+            <button class="slider-control" type="button" aria-label="Выбор слайда 2"></button>
           </li>
           <li>
-            <button
-              class="slider-control visually-hidden"
-              type="button"
-              aria-label="Выбор слайда 3"
-            ></button>
+            <button class="slider-control" type="button" aria-label="Выбор слайда 3"></button>
           </li>
         </ul>
       </section>
@@ -200,25 +191,25 @@
         <h2 class="visually-hidden">Наши примущества</h2>
         <ul class="slider-controls">
           <li class="slider-controls-current"><button class="button">Доставка</button></li>
-          <li><button class="button">Гарантия</button></li>
-          <li><button class="button">Кредит</button></li>
+          <li><button class="button" type="button">Гарантия</button></li>
+          <li><button class="button" type="button">Кредит</button></li>
         </ul>
         <ul class="advantages-slider">
-          <li class="advantages-slider-item current">
+          <li class="advantages-slider-item delivery current">
             <h3>Доставка</h3>
             <p>
               Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно!
               Ведь мы неплохо заработаем, поднимая его на ваш этаж.
             </p>
           </li>
-          <li class="advantages-slider-item">
+          <li class="advantages-slider-item warranty">
             <h3>Гарантия</h3>
             <p>
               Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы
               выдадим вам новый. Товар, не дом, конечно же.
             </p>
           </li>
-          <li class="advantages-slider-item">
+          <li class="advantages-slider-item credit">
             <h3>Кредит</h3>
             <p>
               Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее
@@ -231,7 +222,7 @@
         <h2 class="visually-hidden">Популярные бренды</h2>
         <ul class="brands">
           <li>
-            <div class="brand-logo dji" aria-label="">Логотип DJI</div>
+            <div class="brand-logo dji">Логотип DJI</div>
           </li>
           <li>
             <div class="brand-logo sp-gadgets">Логотип SP-Gadgets</div>
@@ -275,7 +266,7 @@
       </section>
       <section class="modal-feedback hidden">
         <h2 class="visually-hidden">Форма обратной связи</h2>
-        <form action="post" class="feedback-form" action="https://echo.htmlacademy.ru">
+        <form method="post" class="feedback-form" action="https://echo.htmlacademy.ru">
           <p class="form-item">
             <label for="name-field">Ваше имя:</label>
             <input type="text" id="name-field" name="name" value="" placeholder="Имя Фамилия" />

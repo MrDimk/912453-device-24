@@ -18,7 +18,8 @@
 
 @font-face {
   font-family: "Open-Sans";
-  src: url("../fonts/opensans.woff2") format("woff2"), url("../fonts/opensans.woff") format("woff");
+  src: url("../fonts/opensans.woff2") format("woff2"),
+    url("../fonts/opensans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -54,7 +55,7 @@ body {
 .main-page section {
   margin: 0;
 }
-/************** blocks visualisation ********************//*
+/************** blocks visualisation ********************/ /*
 * {
   outline: 1px;
   outline-color: rgba(0, 0, 255, 0.2);
@@ -259,7 +260,7 @@ body {
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
   font-size: 47px;
   line-height: 56px;
-  letter-spacing: 0.00357em;
+  letter-spacing: 0.01em;
   color: #000000;
 }
 
@@ -383,13 +384,13 @@ body {
   background-repeat: no-repeat;
 }
 
-.advantages-slider li:nth-child(1)::after {
+.advantages-slider li.delivery::after {
   background-image: url("../img/delivery.svg");
 }
-.advantages-slider li:nth-child(2)::after {
+.advantages-slider li.warranty::after {
   background-image: url("../img/warranty.svg");
 }
-.advantages-slider li:nth-child(3)::after {
+.advantages-slider li.credit::after {
   background-image: url("../img/credit.svg");
 }
 
@@ -647,7 +648,7 @@ textarea:focus {
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
-  letter-spacing: 0.00357em;
+  letter-spacing: 0.01em;
   color: #000000;
 }
 
@@ -667,6 +668,169 @@ textarea:focus {
 
 .breadcrumbs a:active {
   color: rgba(0, 0, 0, 0.1);
+}
+
+/*** Filters and Sort***/
+
+.filters-title,
+.sort-title {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.filter-group legend {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.filter-group .price-filter-label,
+.price-filter-input {
+  font-family: "Gilroy-Light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.2);
+
+  background-color: none;
+  border: none;
+}
+
+.filter-group label {
+  font-family: "Open-Sans-Light", Arial, sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.filter-group label:disabled {
+  color: #a6a6a6;
+}
+
+.catalog-sort a {
+  font-family: "Open-Sans", Arial, sans-serif;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0em;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.catalog-sort a:hover {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sort-current a,
+.sort-current a:hover,
+.catalog-sort a:active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.sort-order a::before {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 10px;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+}
+
+.sort-order a:hover::before {
+  opacity: 0.4;
+}
+
+.sort-order a.order-current::before,
+.sort-order a:active::before {
+  opacity: 1;
+}
+
+.sort-order a.forward::before {
+  background-image: url("../img/controls/icon-up-dir.svg");
+}
+
+.sort-order a.backward::before {
+  background-image: url("../img/controls/icon-down-dir.svg");
+}
+
+/** Catalog Items **/
+
+.catalog-item h3 a {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+
+.catalog-item .price {
+  font-family: "Gilroy-Light", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  color: #464646;
+}
+
+.catalog-item .to-compare {
+  font-family: "Open-Sans-Light", Arial, sans-serif;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 36px;
+  letter-spacing: 0.01em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.catalog-item a.to-compare:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.catalog-item a.to-compare:active {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+/** Pagination **/
+
+.pagination {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.pagination span {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.pagination span a:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.pagination span a:active {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-list,
+.pagination-list a {
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-item-current {
+  color: #000000;
 }
 
 /*********/
