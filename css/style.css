@@ -413,36 +413,49 @@ body {
 }
 
 /*Index - Brands section*/
+
 .brand-logo {
   width: 260px;
   height: 100px;
-
-  background-image: url("../img/brands/brands-sprite.jpg");
-  background-position-x: 260px;
-  opacity: 0.2;
-
   font-size: 0px;
+  line-height: 0;
 }
 
-.brand-logo.dji {
-  background-position-y: 0px;
-}
-.brand-logo.sp-gadgets {
-  background-position-y: 100px;
-}
-.brand-logo.gopro {
-  background-position-y: 200px;
-}
-.brand-logo.vive {
-  background-position-y: 300px;
+.brand-logo img {
+  height: 0px;
 }
 
-.brand-logo:hover {
-  background-position-x: 0px;
-  opacity: 1;
+.brand-logo::after {
+  content: '';
+  display: block;
+  width: 260px;
+  height: 100px;
+  opacity: 0.2;
 }
+.brands .dji::after {
+  background-image: url('../img/brands/gray/logo-1.jpg');
+}
+.brands .sp-gadgets::after {
+  background-image: url('../img/brands/gray/logo-2.jpg');
+}
+.brands .gopro::after {
+  background-image: url('../img/brands/gray/logo-3.jpg');
+}
+.brands .vive::after {
+  background-image: url('../img/brands/gray/logo-4.jpg');
+}
+
+.brand-logo:hover::after {
+  height: 0;
+}
+
+.brand-logo:hover img {
+  height: 100px;
+}
+
 
 /*Index - About and Contacts sections*/
+
 .about .about-title,
 .contacts .contacts-title {
   display: inline-block;
@@ -487,6 +500,7 @@ body {
   width: 560px;
   height: 222px;
 }
+
 
 /* Modal windows */
 
@@ -615,7 +629,7 @@ textarea:focus {
   opacity: 0.3;
 }
 
-.social-button {
+.footer-social .social-button {
   display: inline-block;
   width: 32px;
   height: 32px;
@@ -635,13 +649,14 @@ textarea:focus {
   background-image: url("../img/yellow/twitter.svg");
 }
 
-.social-button:hover {
+.footer-social .social-button:hover {
   opacity: 0.6;
 }
 
-.social-button:active {
+.footer-social .social-button:active {
   opacity: 0.1;
 }
+
 
 /******************Catalog******************/
 .catalog-page h1 {
@@ -760,6 +775,7 @@ textarea:focus {
   background-image: url("../img/controls/icon-down-dir.svg");
 }
 
+
 /** Catalog Items **/
 
 .catalog-item h3 a {
@@ -796,6 +812,7 @@ textarea:focus {
 .catalog-item a.to-compare:active {
   color: rgba(0, 0, 0, 0.2);
 }
+
 
 /** Pagination **/
 
