@@ -36,7 +36,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-width: 1160px;
+  min-width: 1200px;
   font-family: "Open-Sans-Light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
@@ -153,7 +153,8 @@ body {
   background-color: rgba(240, 197, 46, 0.5);
 }
 
-.header-logo:hover {
+.header-logo:hover,
+.header-logo:focus {
   opacity: 0.6;
 }
 
@@ -214,11 +215,14 @@ body {
   box-sizing: border-box;
 }
 
-.search-input:focus ~ label {
+.search-input:focus ~ label,
+.search-button:active ~ label {
   position: absolute;
   bottom: 0;
-  width: 380px;
-  border-bottom: 2px solid #000000;
+  width: 378px;
+  height: 2px;
+  background-color: #000000;
+  z-index: 2;
 }
 
 .site-navigation .search-input {
@@ -318,7 +322,9 @@ body {
 }
 
 .user-navigation a:hover::before,
-.purchase-menu a:hover::before {
+.user-navigation a:focus::before,
+.purchase-menu a:hover::before,
+.purchase-menu a:focus::before {
   opacity: 0.6;
 }
 
@@ -423,6 +429,7 @@ body {
 }
 
 .categories-list a:hover::before,
+.categories-list a:focus::before,
 .categories-list li:hover::before {
   background-color: rgba(240, 197, 46, 1);
 }
@@ -442,6 +449,10 @@ body {
 }
 .advantages-slider li.credit::after {
   background-image: url("../img/credit.svg");
+}
+
+.advantages .button {
+  outline: none;
 }
 
 .advantages-slider-item.current {
@@ -652,7 +663,8 @@ textarea:focus {
 .site-footer a {
   color: #ffffff;
 }
-.site-footer a:hover {
+.site-footer a:hover,
+.site-footer a:focus {
   opacity: 0.6;
 }
 
@@ -672,6 +684,13 @@ textarea:focus {
 .footer-purchase-menu a:hover,
 .footer-user-navigation a:hover::before,
 .footer-purchase-menu a:hover::before {
+  opacity: 1;
+}
+
+.footer-user-navigation a:focus,
+.footer-purchase-menu a:focus,
+.footer-user-navigation a:focus::before,
+.footer-purchase-menu a:focus::before {
   opacity: 1;
 }
 
@@ -702,7 +721,8 @@ textarea:focus {
   background-image: url("../img/yellow/twitter.svg");
 }
 
-.footer-social .social-button:hover {
+.footer-social .social-button:hover,
+.footer-social .social-button:focus {
   opacity: 0.6;
 }
 
@@ -783,6 +803,11 @@ textarea:focus {
   color: #a6a6a6;
 }
 
+.filter-group .checkbox-input,
+.filter-group .radio-input {
+  display: none;
+}
+
 .catalog-sort a {
   font-family: "Open-Sans", Arial, sans-serif;
   text-decoration: none;
@@ -792,7 +817,8 @@ textarea:focus {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.catalog-sort a:hover {
+.catalog-sort a:hover,
+.catalog-sort a:focus {
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -811,7 +837,8 @@ textarea:focus {
   opacity: 0.2;
 }
 
-.sort-order a:hover::before {
+.sort-order a:hover::before,
+.sort-order a:focus::before {
   opacity: 0.4;
 }
 
@@ -858,7 +885,8 @@ textarea:focus {
   color: rgba(0, 0, 0, 0.5);
 }
 
-.catalog-item a.to-compare:hover {
+.catalog-item a.to-compare:hover,
+.catalog-item a.to-compare:focus {
   color: rgba(0, 0, 0, 1);
 }
 
@@ -881,7 +909,8 @@ textarea:focus {
   color: #000000;
 }
 
-.pagination span a:hover {
+.pagination span a:hover,
+.pagination span a:focus {
   background-color: rgba(0, 0, 0, 0.08);
 }
 
@@ -897,6 +926,15 @@ textarea:focus {
   line-height: 24px;
   letter-spacing: 0.2em;
   color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-list a:hover,
+.pagination-list a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.pagination-list a:active {
+  color: rgba(0, 0, 0, 1);
 }
 
 .pagination-item-current {
@@ -922,6 +960,7 @@ textarea:focus {
 
 .header-logo {
   display: block;
+  width: 162px;
   transform: translateY(-19px);
 }
 
@@ -929,7 +968,7 @@ textarea:focus {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .header-top-wrapper ul {
@@ -941,6 +980,8 @@ textarea:focus {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  height: 50px;
+  transform: translateY(-10px);
 }
 
 .top-menu-block {
@@ -1117,9 +1158,6 @@ li.popular-slider-item.current::before {
   box-sizing: border-box;
 }
 
-/* Я помню что такие псевдоклассы привязывают
-*  к положению в разметке, но считаю что здесь они уместны
-*/
 .popular-item-properties td:nth-child(1) {
   width: 160px;
   padding-left: 2px;
@@ -1199,7 +1237,6 @@ section.main-page-popular {
   background-position: center;
   background-origin: content-box;
 }
-
 
 
 /** Advantages **/
@@ -1433,41 +1470,41 @@ section.main-page-popular {
   padding-left: 20px;
 }
 
-.site-footer .footer-user-navigation .login-link a::before,
-.site-footer .footer-user-navigation .login-profile a::before {
+.footer-user-navigation .login-link a::before,
+.footer-user-navigation .login-profile a::before {
   content: '';
   display: inline-block;
   width: 12px;
   height: 12px;
   margin-right: 12px;
 }
-.site-footer .footer-user-navigation .login-link a::before,
-.site-footer .footer-user-navigation .login-profile a::before {
+.footer-user-navigation .login-link a::before,
+.footer-user-navigation .login-profile a::before {
   background-image: url('../img/yellow/user-yellow.svg');
 }
 
-.site-footer .footer-purchase-menu li {
+.footer-purchase-menu li {
   margin: 0;
   padding: 0;
   padding-left: 40px;
 }
-.site-footer .footer-purchase-menu li a::before {
+.footer-purchase-menu li a::before {
   content: '';
   display: inline-block;
   width: 12px;
   height: 12px;
   margin-right: 10px;
 }
-.site-footer .footer-purchase-menu .compare a::before {
+.footer-purchase-menu .compare a::before {
   background-image: url('../img/yellow/compare.svg');
   width: 10px;
   height: 10px;
 }
-.site-footer .footer-purchase-menu .cart a::before {
+.footer-purchase-menu .cart a::before {
   background-image: url('../img/yellow/cart.svg');
 }
 
-.site-footer .footer-middle {
+.footer-middle {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -1558,7 +1595,7 @@ section.main-page-popular {
   justify-content: center;
 }
 
-.catalog-page .two-columns .left-column {
+.catalog-page .left-column {
   margin: 0;
   padding: 0;
   padding-bottom: 80px;
@@ -1570,15 +1607,11 @@ section.main-page-popular {
   background-image: linear-gradient(#DBDBDB 70px, #EEEEEE 71px );
 }
 
-.catalog-page .two-columns .right-column {
+.catalog-page .right-column {
   margin: 0;
   padding: 0;
   padding-bottom: 80px;
   flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 
   background-image: linear-gradient(#EBEBEB 70px, transparent 71px);
 }
@@ -1679,6 +1712,7 @@ section.main-page-popular {
   padding: 0;
 
   cursor: pointer;
+  outline: none;
 }
 
 .filter-group input[type=checkbox] + label::before {
@@ -1708,6 +1742,7 @@ section.main-page-popular {
   padding: 0;
 
   cursor: pointer;
+  outline: none;
 }
 
 .filter-group input[type=radio] + label::before {
@@ -1727,11 +1762,21 @@ section.main-page-popular {
   background-image: radial-gradient(#000000 4px, transparent 5px);
 }
 
-/********hover and disabled********/
+/********hover, focus and disabled********/
 
 .filter-group input[type="checkbox"]:not(:disabled) + label:hover::before,
 .filter-group input[type="radio"]:not(:disabled) + label:hover::before {
   opacity: 0.6;
+}
+
+.filter-group input[type="checkbox"]:not(:disabled) + label:focus::before,
+.filter-group input[type="radio"]:not(:disabled) + label:focus::before {
+  box-shadow: 0 0 2px 2px #F0C52E;
+}
+
+.filter-group input[type="checkbox"]:not(:disabled) + label:active::before,
+.filter-group input[type="radio"]:not(:disabled) + label:active::before {
+  box-shadow: none;
 }
 
 .filter-group input[type="checkbox"]:disabled + label,
@@ -1744,6 +1789,7 @@ section.main-page-popular {
 .filter-form .button {
   width: 200px;
   padding-top: 10px;
+  outline: none;
 }
 
 
@@ -1827,19 +1873,34 @@ section.main-page-popular {
   top: 0;
   width: 360px;
   height: 380px;
-  background-color: rgba(255, 255, 255, 0);
-  opacity: 0;
 }
 
-.catalog-item .hover-layer:hover,
-.catalog-item .hover-layer:focus {
+.catalog-item .hover-layer:hover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 360px;
+  height: 380px;
   background-color: rgba(255, 255, 255, 0.7);
-  opacity: 1;
+  cursor: pointer;
 }
 
 .hover-layer .button {
   width: 200px;
   padding: 40px 0;
+  opacity: 0;
+}
+
+.hover-layer .to-compare {
+  opacity: 0;
+}
+
+.hover-layer:hover .button,
+.hover-layer .button:focus,
+.hover-layer:hover .to-compare,
+.hover-layer .to-compare:focus {
+  opacity: 1;
+  z-index: 2;
 }
 
 .catalog-item .price {
@@ -1847,6 +1908,29 @@ section.main-page-popular {
   top: 410px;
   right: 0;
   max-width: 105px;
+}
+
+.mark-new .hover-layer::after {
+  content: 'new';
+  display: block;
+  position: absolute;
+  top: 29px;
+  right: 27px;
+
+  font-family: "Gilroy-ExtraBold", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  color: rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  text-align: center;
+
+  box-sizing: border-box;
+  width: 60px;
+  height: 60px;
+  padding: 16px 7px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
 }
 
 
