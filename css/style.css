@@ -1024,19 +1024,7 @@ textarea:focus {
 }
 
 .header-menu .catalog-submenu {
-  display: none;
   position: absolute;
-  box-sizing: border-box;
-  height: 160px;
-  width: 1160px;
-  margin-left: -60px;
-  background-color:#F7E296;
-  z-index: 1;
-}
-
-.main-menu-catalog:hover + .catalog-submenu,
-.main-menu-catalog:focus + .catalog-submenu,
-.header-menu .catalog-submenu:hover  {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -1044,6 +1032,25 @@ textarea:focus {
   align-content: flex-start;
   justify-content: flex-start;
   padding-top: 10px;
+
+  box-sizing: border-box;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.main-menu-catalog:hover + .catalog-submenu,
+.main-menu-catalog:focus + .catalog-submenu,
+.header-menu .catalog-submenu:hover,
+.header-menu .catalog-submenu:focus-within {
+  margin: 0;
+  clip: unset;
+  height: 160px;
+  width: 1160px;
+  margin-left: -60px;
+  background-color:#F7E296;
+  z-index: 1;
 }
 
 .catalog-submenu li {
