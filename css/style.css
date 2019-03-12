@@ -150,7 +150,7 @@ body {
 }
 
 .site-navigation {
-  background-color: rgba(240, 197, 46, 0.5);
+  background-color: #F7E296;
 }
 
 .header-logo:hover,
@@ -453,13 +453,6 @@ body {
 
 .advantages .button {
   outline: none;
-}
-
-.advantages-slider-item.current {
-  margin: 0;
-  padding: 0;
-  display: block;
-  height: 290px;
 }
 
 .advantages-slider-item h3 {
@@ -996,7 +989,7 @@ textarea:focus {
 }
 
 .user-navigation li {
-  margin-right: 20px;
+  margin-right: 20px; 
 }
 
 
@@ -1026,7 +1019,7 @@ textarea:focus {
 .header-menu .catalog-submenu {
   position: absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
@@ -1046,7 +1039,7 @@ textarea:focus {
 .header-menu .catalog-submenu:focus-within {
   margin: 0;
   clip: unset;
-  height: 160px;
+  min-height: 163px;
   width: 1160px;
   margin-left: -60px;
   background-color:#F7E296;
@@ -1254,6 +1247,7 @@ section.main-page-popular {
   padding: 0;
 }
 .main-page .advantages {
+  position: relative;
   background-image: linear-gradient(transparent 100px, #E5E5E5 100px);
   min-height: 388px;
   margin-bottom: 93px;
@@ -1274,7 +1268,7 @@ section.main-page-popular {
   padding-top: 85px;
   padding-bottom: 0px;
   width: 277px;
-  height: 232px;
+  min-height: 232px;
   border-right: 7px solid #000000;
 }
 
@@ -1310,6 +1304,13 @@ section.main-page-popular {
   width: 100%;
   padding-left: 117px;
   padding-top: 73px;
+}
+
+.advantages-slider-item.current {
+  margin: 0;
+  padding: 0;
+  display: block;
+  min-height: 290px;
 }
 
 .advantages-slider-item:not(.current) {
