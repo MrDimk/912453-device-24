@@ -1115,7 +1115,7 @@ textarea:focus {
 ol.popular-slider {
   position: relative;
   background-image: linear-gradient(rgba(240, 197, 46, 0.5) 110px, transparent 110px);
-  counter-reset: item -1;
+  counter-reset: item;
 }
 
 .main-page .popular-slider-item {
@@ -1128,7 +1128,6 @@ ol.popular-slider {
 }
 
 li.popular-slider-item::before {
-  counter-increment: item;
   content: "0" counter(item);
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
   font-size: 180px;
