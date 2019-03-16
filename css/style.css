@@ -1115,7 +1115,16 @@ textarea:focus {
 ol.popular-slider {
   position: relative;
   background-image: linear-gradient(rgba(240, 197, 46, 0.5) 110px, transparent 110px);
-  counter-reset: item;
+  counter-reset: item -1;
+}
+
+.main-page .popular-slider-item {
+  display: flex;
+  counter-increment: item;
+}
+
+.popular-slider-item:not(.current) * {
+  display: none;
 }
 
 li.popular-slider-item::before {
@@ -1126,24 +1135,18 @@ li.popular-slider-item::before {
   line-height: 180px;
   letter-spacing: 0.01em;
   text-transform: none;
-  color: rgba(255, 255, 255, 0);
+  color: #ffffff;
 
+  display: none;
   position: absolute;
   right: 45px;
   top: -15px;
 }
 
 li.popular-slider-item.current::before {
-  color: rgba(255, 255, 255, 1);
+  display: inline;
 }
 
-.main-page .popular-slider-item {
-  display: flex;
-}
-
-.popular-slider-item:not(.current) * {
-  display: none;
-}
 
 .popular-slider .slider-item-photo {
   display: flex;
