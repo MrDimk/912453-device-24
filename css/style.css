@@ -379,6 +379,7 @@ body {
 .popular-item-properties th {
   font-family: "Open-Sans-Light", Arial, sans-serif;
   text-decoration: none;
+  text-align: left;
   color: #464646;
   font-size: 13px;
   font-weight: inherit;
@@ -873,11 +874,13 @@ textarea:focus {
 
 
 /** Catalog Items **/
-
+.catalog-item h3 {
+  line-height: 24px;
+}
 .catalog-item h3 a {
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
   font-size: 18px;
-  line-height: 24px;
+  /* line-height: 24px; */
   font-weight: normal;
   letter-spacing: 0.01em;
   color: #000000;
@@ -1570,7 +1573,7 @@ section.main-page-popular {
   vertical-align: baseline;
   width: 12px;
   height: 12px;
-  margin-right: 12px;
+  margin-right: 14px;
 }
 .footer-user-navigation .login-link a::before,
 .footer-user-navigation .login-profile a::before {
@@ -1608,7 +1611,7 @@ section.main-page-popular {
 
 .footer-middle .address {
   order: 1;
-  margin-bottom: 65px;
+  margin-bottom: 63px;
 }
 
 .footer-middle .phone {
@@ -1620,13 +1623,14 @@ section.main-page-popular {
   margin: 0;
   padding: 0;
   padding-top: 5px;
-  margin-right: 30px;
+  margin-right: 40px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+
 }
 
 .footer-middle .footer-menu li {
-  padding: 0 18px;
+  padding: 0 16px;
 }
 
 .footer-bottom {
@@ -1636,7 +1640,7 @@ section.main-page-popular {
 }
 
 .footer-bottom .yellow-line {
-  margin: 13px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 0;
   width: 80px;
   height: 7px;
@@ -1654,7 +1658,7 @@ section.main-page-popular {
 }
 
 .footer-social li {
-  padding: 0 0 0 22px;
+  padding: 2px 3px 0 20px;
 }
 
 
@@ -1695,7 +1699,7 @@ section.main-page-popular {
 .catalog-page .left-column {
   margin: 0;
   padding: 0;
-  padding-bottom: 80px;
+  padding-bottom: 77px;
   flex-grow: 1;
 
   display: flex;
@@ -1707,7 +1711,7 @@ section.main-page-popular {
   position: relative;
   margin: 0;
   padding: 0;
-  padding-bottom: 80px;
+  padding-bottom: 77px;
   flex-grow: 1;
 }
 
@@ -1761,7 +1765,7 @@ section.main-page-popular {
 
 .range-bar {
   position: relative;
-  margin: 20px 0 6px 0;
+  margin: 20px 0 5px 0;
   padding: 0;
   height: 2px;
   width: 200px;
@@ -1809,6 +1813,17 @@ section.main-page-popular {
   margin: 0;
   padding: 0;
   width: 70px;
+  height: 24px;
+}
+
+.price-filter-label {
+    margin: 0;
+    padding: 0;
+    height: 24px;
+}
+
+.filter-group.price {
+  margin-bottom: 31px;
 }
 
 
@@ -1830,7 +1845,7 @@ section.main-page-popular {
   vertical-align: top;
   margin: 0;
   padding: 0;
-  margin-right: 10px;
+  margin-right: 11px;
   width: 27px;
   height: 23px;
   background-image: url("../img/controls/checkbox-off.svg");
@@ -1862,7 +1877,7 @@ section.main-page-popular {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  margin-right: 10px;
+  margin-right: 12px;
   width: 25px;
   height: 25px;
   border: 4px solid #000000;
@@ -1912,7 +1927,7 @@ section.main-page-popular {
 
 .filter-form .button {
   width: 200px;
-  padding-top: 10px;
+  padding-top: 8px;
   outline: none;
 }
 
@@ -1992,7 +2007,7 @@ section.main-page-popular {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 20px 0;
+  margin: 20px 0 27px 0;
   padding: 0;
   width: 360px;
 }
@@ -2002,7 +2017,7 @@ section.main-page-popular {
   width: 255px;
   margin: 0;
   padding: 0;
-  padding-top: 27px;
+  padding-top: 30px;
 }
 
 .catalog-item .hover-layer {
@@ -2083,25 +2098,26 @@ section.main-page-popular {
 /*********pagination ********/
 
 .catalog-page .pagination {
-  margin: 8px 0 0 70px;
+  margin: 8px 0 0 72px;
   padding: 0;
   width: 760px;
-  min-height: 60px;
+  min-height: 70px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/*  По логике ссылки "Назад" и "Вперед" должны стилизоватья
-    одинакого, но на макете все отступы разные,
-    пока оставляю единообразно*/
 .pagination .pagination-previous a,
 .pagination .pagination-next a {
   display: block;
   margin: 0;
   box-sizing: border-box;
-  padding: 25px 30px 20px 30px;
+  padding: 23px 30px 20px 30px;
+}
+
+.pagination .pagination-next a {
+  padding: 23px 27px 20px 30px;
 }
 
 .pagination .pagination-list {
@@ -2118,7 +2134,7 @@ section.main-page-popular {
 
 .pagination .pagination-list li {
   margin: 0;
-  padding: 5px 15px 0 15px;
+  padding: 5px 15px 0 13px;
 }
 
 
