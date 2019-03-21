@@ -609,8 +609,10 @@ textarea:focus {
   height: 55px;
   border: none;
   border-radius: 50%;
-  background-color: rgba(240, 197, 46, 0.5);
   outline: none;
+  transition-duration: 0.2s;
+  background-color: rgba(224, 211, 162, 0.5);
+  transform: rotate(0deg);
 }
 .modal-close::before,
 .modal-close::after {
@@ -632,7 +634,9 @@ textarea:focus {
 
 .modal-close:hover,
 .modal-close:focus {
+  transition-duration: 0.2s;
   background-color: rgba(240, 197, 46, 1);
+  transform: rotate(180deg);
 }
 
 .modal-close:active {
@@ -2153,6 +2157,9 @@ section.main-page-popular {
 
   background-color: #ffffff;
   box-shadow: 0 10px 20px 0px rgba(4, 6, 6, 0.2);
+
+  animation-name: modal-appear;
+  animation-duration: 0.5s;
 }
 
 .modal-feedback .two-columns {
@@ -2198,6 +2205,9 @@ section.main-page-popular {
 
   background-color: #ffffff;
   box-shadow: 0 0px 20px -10px #000000;
+
+  animation-name: modal-appear;
+  animation-duration: 0.5s;
 }
 
 .modal-map .modal-close {
@@ -2205,6 +2215,38 @@ section.main-page-popular {
   top: 22px;
   right: 22px;
   outline: none;
+}
+
+@keyframes modal-appear {
+  0% {
+    left: 0%;
+    opacity: 0;
+  }
+  25% {
+    left: 55%;
+    opacity: 0.5;
+  }
+  50% {
+    left: 48%;
+    opacity: 1;
+  }
+  75% {
+    left: 51%;
+    opacity: 1;
+  }
+  100% {
+    left: 50%;
+    opacity: 1;
+  }
+}
+
+@keayframes button-rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }
 
 /*********/
