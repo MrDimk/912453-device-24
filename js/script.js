@@ -135,5 +135,6 @@ feedbackForm.addEventListener('submit', function(evt) {
 feedbackFormData.forEach(function(field) {
   field.addEventListener('input', function(evt) {
     localStorage.setItem(evt.srcElement.name, evt.srcElement.value);
+    isValid(field);
   });
 });
