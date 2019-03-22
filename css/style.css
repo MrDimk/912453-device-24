@@ -282,8 +282,8 @@ body {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.top-menu-block .login-link a::before,
-.top-menu-block .login-profile a::before {
+.login-link a::before,
+.login-profile a::before {
   content: "";
   display: inline-block;
   vertical-align: baseline;
@@ -293,7 +293,7 @@ body {
   background-image: url("../img/user.svg");
 }
 
-.purchase-menu .compare a::before {
+.compare a::before {
   content: "";
   display: inline-block;
   vertical-align: baseline;
@@ -303,7 +303,7 @@ body {
   background-image: url("../img/compare.svg");
 }
 
-.purchase-menu .cart a::before {
+.cart a::before {
   content: "";
   display: inline-block;
   vertical-align: baseline;
@@ -370,7 +370,7 @@ body {
 
 .popular-slider-item .button {
   width: 220px;
-  margin-left: 6px;
+  margin-left: 0px;
 }
 
 .popular-item-properties thead {
@@ -878,13 +878,12 @@ textarea:focus {
 
 
 /** Catalog Items **/
-.catalog-item h3 {
+.catalog-item-title {
   line-height: 24px;
 }
-.catalog-item h3 a {
+.catalog-item-title a {
   font-family: "Gilroy-ExtraBold", Arial, sans-serif;
   font-size: 18px;
-  /* line-height: 24px; */
   font-weight: normal;
   letter-spacing: 0.01em;
   color: #000000;
@@ -932,12 +931,15 @@ textarea:focus {
   color: #000000;
 }
 
-.pagination span a:hover,
-.pagination span a:focus {
+.pagination-previous a:hover,
+.pagination-previous a:focus,
+.pagination-next a:hover,
+.pagination-next a:focus {
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-.pagination span a:active {
+.pagination-previous a:active,
+.pagination-next a:active {
   background-color: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.3);
 }
@@ -1022,8 +1024,8 @@ textarea:focus {
   margin-right: 20px;
 }
 
-.purchase-menu .cart a,
-.purchase-menu .compare a {
+ .cart a,
+ .compare a {
   margin-left: 40px;
 }
 
@@ -1126,7 +1128,7 @@ ol.popular-slider {
   position: relative;
   background-image: linear-gradient(#f7e296 110px, transparent 110px);
   counter-reset: item;
-  height: 100%;
+  min-height: 485px
 }
 
 .main-page .popular-slider-item {
@@ -1183,25 +1185,21 @@ li.popular-slider-item.current::before {
   position: relative;
   flex-shrink: 0;
   box-sizing: border-box;
-  width: 595px;
-  padding: 0 60px 0 30px;
+  width: 590px;
+  padding: 0 30px 0 30px;
   padding-top: 35px;
 }
-
-/* .popular-slider-item .product-info {
-  margin: 0;
-  padding: 0;
-} */
 
 .slider-item-info .slogan {
   display: block;
   margin-bottom: 20px;
-  padding: 0 0 0 5px;
+  padding: 0;
 }
 
 .slider-item-info .description {
   display: block;
-  padding: 0 5px;
+  width: 490px;
+  padding: 0;
 }
 
 .slider-item-info p:last-of-type {
@@ -1221,16 +1219,18 @@ li.popular-slider-item.current::before {
 .popular-item-properties th {
   margin: 0;
   padding: 0;
-  padding: 6px 0px 0px 3px;
+  padding: 7px 0px 0px 0px;
 }
 
 .popular-item-properties td {
   box-sizing: border-box;
+  padding: 0;
+  padding-top: 2px;
 }
 
 .popular-item-properties td:nth-child(1) {
   width: 160px;
-  padding-left: 2px;
+  padding-left: 0px;
 }
 
 .popular-item-properties td:nth-child(2) {
@@ -1334,7 +1334,7 @@ section.main-page-popular {
   justify-content: flex-start;
 }
 
-.advantages .slider-controls {
+.advantages-slider-controls {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1348,26 +1348,26 @@ section.main-page-popular {
   border-right: 7px solid #000000;
 }
 
-.advantages .slider-controls li {
+.advantages-slider-controls li {
   margin: 0;
   padding: 0;
   height: 64px;
 }
 
-.advantages .slider-controls button {
+.advantages-slider-controls button {
   width: 160px;
 }
 
-.advantages .slider-controls .current button,
-.advantages .slider-controls button:active {
+.advantages-slider-controls .current button,
+.advantages-slider-controls button:active {
   width: 277px;
   padding-left: 20px;
   text-align: left;
   background-color: #000000;
   color: #f7e184;
 }
-.advantages .slider-controls .current button::after,
-.advantages .slider-controls button:active::after {
+.advantages-slider-controls .current button::after,
+.advantages-slider-controls button:active::after {
   background-color: #000000;
   left: -20px;
   top: -32px;
@@ -1412,6 +1412,7 @@ section.main-page-popular {
 .advantages-slider li.warranty::after {
   background-image: url("../img/warranty.svg");
   top:61px;
+  right: 16px;
 }
 .advantages-slider li.credit::after {
   background-image: url("../img/credit.svg");
@@ -1432,7 +1433,7 @@ section.main-page-popular {
 
 /** Brands **/
 
-.brands .container ul {
+.brands-list {
   margin: 0;
   margin-bottom: 90px;
   padding: 0;
@@ -1499,7 +1500,7 @@ section.main-page-popular {
   margin-bottom: 65px;
 }
 
-.about .logistics li {
+.logistics li {
   margin-bottom: 10px;
 }
 
@@ -1736,19 +1737,19 @@ section.main-page-popular {
   padding: 25px 0px;
 }
 
-.catalog-filters .filter-group {
+.filter-group {
   position: relative;
   margin: 0 0 30px 0;
   padding: 15px 15px 0 0;
   border: 0;
 }
 
-.catalog-filters .filter-group legend {
+.filter-group legend {
   margin: 0;
   padding: 0;
 }
 
-.catalog-filters .filter-group legend::before {
+.filter-group legend::before {
   content: "";
   display: block;
   margin: 0;
@@ -2112,19 +2113,19 @@ section.main-page-popular {
   align-items: center;
 }
 
-.pagination .pagination-previous a,
-.pagination .pagination-next a {
+.pagination-previous a,
+.pagination-next a {
   display: block;
   margin: 0;
   box-sizing: border-box;
   padding: 23px 30px 20px 30px;
 }
 
-.pagination .pagination-next a {
+.pagination-next a {
   padding: 23px 27px 20px 30px;
 }
 
-.pagination .pagination-list {
+.pagination-list {
   margin: 0;
   padding: 0 10px 0 25px;
   width: 100%;
@@ -2136,7 +2137,7 @@ section.main-page-popular {
   flex-wrap: wrap;
 }
 
-.pagination .pagination-list li {
+.pagination-list li {
   margin: 0;
   padding: 5px 15px 0 13px;
 }

@@ -29,7 +29,7 @@ forEachNode(mainSliderControls, function(control, number) {
 //Advantages slider
 
 var advantagesSlider = document.querySelectorAll('.advantages-slider-item');
-var advantagesSliderControls = document.querySelectorAll('.advantages .slider-controls li');
+var advantagesSliderControls = document.querySelectorAll('.advantages-slider-controls li');
 var currentAdvantageSlide = 0;
 
 forEachNode(advantagesSliderControls, function(control, number) {
