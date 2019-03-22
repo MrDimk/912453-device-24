@@ -1229,12 +1229,12 @@ li.popular-slider-item.current::before {
 }
 
 .popular-item-properties td:nth-child(1) {
-  width: 160px;
+  min-width: 155px;
   padding-left: 0px;
 }
 
 .popular-item-properties td:nth-child(2) {
-  width: 137px;
+  min-width: 140px;
 }
 
 .popular-slider + .slider-controls {
