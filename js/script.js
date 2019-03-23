@@ -40,8 +40,8 @@ forEachNode(advantagesSliderControls, function(control, number) {
     evt.preventDefault();
     advantagesSlider[currentAdvantageSlide].classList.remove('current');
     advantagesSlider[number].classList.add('current');
-    advantagesSliderControls[currentAdvantageSlide].classList.remove('current');
-    advantagesSliderControls[number].classList.add('current');
+    advantagesSliderControls[currentAdvantageSlide].classList.remove('advantages-current');
+    advantagesSliderControls[number].classList.add('advantages-current');
     currentAdvantageSlide = number;
   });
 });
@@ -113,6 +113,8 @@ window.addEventListener('keydown', function(evt) {
 
 var isValid = function(field) {
   if (field.value == '') {
+    field.classList.remove('invalid');
+    field.offsetWidth = field.offsetWidth;
     field.classList.add('invalid');
     console.warn('Не заполнено поле ' + field.name);
     return false;

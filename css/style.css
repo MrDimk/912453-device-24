@@ -57,19 +57,6 @@ body {
   padding: 0;
 }
 
-/************** blocks visualisation ********************//*
-* {
-  outline: 1px;
-  outline-color: rgba(0, 0, 255, 0.2);
-  outline-style: dashed;
-}
-
-*:hover {
-  outline-color: red;
-  background-color: rgba(255, 0, 0, 0.1);
-}
-/**********************************************************/
-
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -438,7 +425,7 @@ body {
 
 .categories-list a:active,
 .categories-list a:active::before {
-  opacity: 0.3; /* в макете значение 30%, но на глаз выглядит как 50% */
+  opacity: 0.3;
 }
 
 /*Index - Advantages section*/
@@ -1037,17 +1024,18 @@ textarea:focus {
 
 .header-menu.pages {
   display: flex;
+  flex-wrap: wrap;
   width: 500px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .header-menu.pages li {
   padding-right: 35px;
 }
 
-.header-menu.pages li:last-child {
+.header-menu.pages li:nth-child(3n) {
   flex-grow: 1;
-  padding: 0;
+  padding-right: 0px;
   margin-right: -3px;
   text-align: right;
 }
@@ -1079,8 +1067,8 @@ textarea:focus {
   background-color: #f7e296;
 }
 
-.header-menu li:first-child:hover .catalog-submenu,
-.header-menu .main-menu-catalog:focus + .catalog-submenu {
+.main-submenu-item:hover .catalog-submenu,
+.main-menu-catalog:focus + .catalog-submenu {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -1172,7 +1160,7 @@ li.popular-slider-item.current::before {
 }
 
 .slider-item-photo .slide-1 {
-  transform: translate(0, -2px);
+  transform: translate(-2px, -2px);
 }
 .slider-item-photo .slide-2 {
   transform: translate(6px, 9px);
@@ -1237,7 +1225,7 @@ li.popular-slider-item.current::before {
   min-width: 140px;
 }
 
-.popular-slider + .slider-controls {
+.popular.slider-controls {
   margin: 0;
   padding: 0;
   display: flex;
@@ -1246,10 +1234,10 @@ li.popular-slider-item.current::before {
   padding-right: 60px;
   transform: translateY(-160px);
 }
-.popular-slider + .slider-controls li {
+.popular.slider-controls li {
   padding-right: 22px;
 }
-.popular-slider + .slider-controls .slider-control {
+.popular.slider-controls .slider-control {
   display: block;
   margin: 0;
   padding: 0;
@@ -1261,7 +1249,7 @@ li.popular-slider-item.current::before {
   border-radius: 50%;
 }
 
-.popular-slider + .slider-controls .current {
+.popular.slider-controls .current {
   background-image: radial-gradient(#ffffff 1px, #000000 2px, #000000 2px, #ffffff 3px);
 }
 
@@ -1358,7 +1346,7 @@ section.main-page-popular {
   width: 160px;
 }
 
-.advantages-slider-controls .current button,
+.advantages-current button,
 .advantages-slider-controls button:active {
   width: 277px;
   padding-left: 20px;
@@ -1366,7 +1354,7 @@ section.main-page-popular {
   background-color: #000000;
   color: #f7e184;
 }
-.advantages-slider-controls .current button::after,
+.advantages-current button::after,
 .advantages-slider-controls button:active::after {
   background-color: #000000;
   left: -20px;
@@ -1389,7 +1377,6 @@ section.main-page-popular {
   margin: 0;
   padding: 0;
   display: block;
-  /* min-height: 290px; */
 }
 
 .advantages-slider-item:not(.current) {
@@ -1571,8 +1558,8 @@ section.main-page-popular {
   transform: translate(-2px, -3px);
 }
 
-.footer-user-navigation .login-link a::before,
-.footer-user-navigation .login-profile a::before {
+.footer-login-link a::before,
+.footer-login-profile a::before {
   content: "";
   display: inline-block;
   vertical-align: baseline;
@@ -1580,8 +1567,8 @@ section.main-page-popular {
   height: 12px;
   margin-right: 14px;
 }
-.footer-user-navigation .login-link a::before,
-.footer-user-navigation .login-profile a::before {
+.footer-login-link a::before,
+.footer-login-profile a::before {
   background-image: url("../img/yellow/user-yellow.svg");
 }
 
@@ -1591,7 +1578,8 @@ section.main-page-popular {
   padding-left: 40px;
   transform: translate(-1px, -3px);
 }
-.footer-purchase-menu li a::before {
+.footer-compare a::before,
+.footer-cart a::before {
   content: "";
   display: inline-block;
   vertical-align: baseline;
@@ -1599,12 +1587,12 @@ section.main-page-popular {
   height: 12px;
   margin-right: 10px;
 }
-.footer-purchase-menu .compare a::before {
+.footer-compare a::before {
   background-image: url("../img/yellow/compare.svg");
   width: 10px;
   height: 10px;
 }
-.footer-purchase-menu .cart a::before {
+.footer-cart a::before {
   background-image: url("../img/yellow/cart.svg");
 }
 
@@ -1629,7 +1617,9 @@ section.main-page-popular {
   padding: 0;
   padding-top: 5px;
   margin-right: 40px;
+  max-width: 700px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 
 }
@@ -1980,12 +1970,12 @@ section.main-page-popular {
   padding: 24px 35px 20px 72px;
 }
 
-.catalog-sort .sort-types li {
+.sort-types li {
   margin: 0;
   padding: 0 15px;
 }
 
-.catalog-sort .sort-order {
+.sort-order {
   justify-self: flex-end;
   width: 40px;
 
@@ -2172,7 +2162,7 @@ section.main-page-popular {
   padding: 0 100px;
 }
 
-.modal-feedback .form-item label {
+.form-item label {
   display: block;
   padding-bottom: 5px;
 }
@@ -2221,7 +2211,9 @@ section.main-page-popular {
 .modal-feedback input.invalid,
 .modal-feedback textarea.invalid {
   color: rgba(46, 46, 46, 0.4);
-  background-color: #faecec;
+  background-color: #f6dada;
+  animation-name: invalid-field;
+  animation-duration: 0.3s;
 }
 
 @keyframes modal-appear {
@@ -2244,6 +2236,27 @@ section.main-page-popular {
   100% {
     left: 50%;
     opacity: 1;
+  }
+}
+
+@keyframes invalid-field {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-3px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
